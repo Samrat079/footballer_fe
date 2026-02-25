@@ -8,7 +8,6 @@ const [players, setPlayers] = useState<Player[]>([]);
 const fetch_players = async () => {
     const res = await fetch('https://footballers-spring-app.onrender.com/api/v1/footballer');
     const result: Player[] = await res.json();
-    console.log(result);
     setPlayers(result);
 }
 
