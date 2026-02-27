@@ -1,32 +1,29 @@
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import type { Player } from '../types/player';
 import Player_card_01 from './Player_card_01';
 import { CiSearch } from "react-icons/ci";
-import { fetch_players } from '../api/fetch_players';
+import { fetch_players_01 } from '../api/fetch_players_01';
 import About_pane_01 from './links/About_pane_01';
 import Sample_data_pane_01 from './links/Sample_data_pane_01';
 import Add_player_pane_01 from './links/Add_player_pane_01';
+import { useQuery } from '@tanstack/react-query';
+import Loading_spinner_01 from './Api_states/Loading_spinner_01';
+import Error_display_01 from './Api_states/Error_display_01';
+import Is_Empty_01 from './Api_states/Is_Empty_01';
 
 const Footballer_list_01 = () => {
-  const [players, setPlayers] = useState<Player[]>([]);
   const [query, setQuery] = useState<string>('');
 
-  useEffect(() => {
-    const delay = query.trim() ? 200 : 0;
-
-    const timeOut = setTimeout(async () => {
-      const data = await fetch_players(query);
-      setPlayers(data);
-    }, delay);
-
-    return () => clearTimeout(timeOut);
-  }, [query]);
+  const {data, error, isError, isLoading} = useQuery<Player[]>({
+    queryKey: ['players', query],
+    queryFn: () => fetch_players_01(query),
+  });
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-screen w-full overflow-hidden fixed">
 
       {/* Sidebar */}
-      <aside className="w-64 border-r border-gray-400 shadow-lg flex flex-col ">
+      <aside className="w-64 border-r border-gray-400 shadow-lg flex flex-col">
         <p className="text-2xl font-bold m-4">Footballer db</p>
 
         {/* Search bar */}
@@ -58,8 +55,11 @@ const Footballer_list_01 = () => {
 
       {/* Scrollable Content */}
       <main className="flex-1 p-4 overflow-y-auto">
+        {isLoading && <Loading_spinner_01 />}
+        {isError && <Error_display_01 code={error} />}
+        {data?.length == 0 && <Is_Empty_01 query={query}/>}
         <ul className="grid grid-cols-3 gap-4">
-          {players.map((player) => (
+          {data?.map((player) => (
             <Player_card_01 player={player} key={player.id} />
           ))}
         </ul>

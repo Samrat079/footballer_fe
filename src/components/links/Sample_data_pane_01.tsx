@@ -27,7 +27,8 @@ const Sample_data_pane_01 = () => {
             <button
                 onClick={() => setOpen(true)}
                 className='
-                    p-2
+                    px-4
+                    py-2
                     text-left
                     w-full
                     hover:bg-gray-400
