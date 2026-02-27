@@ -4,7 +4,6 @@ import Player_card_01 from './Player_card_01';
 import { CiSearch } from "react-icons/ci";
 import { fetch_players } from '../api/fetch_players';
 import About_pane_01 from './links/About_pane_01';
-import Github_pane_01 from './links/Github_pane_01';
 import Sample_data_pane_01 from './links/Sample_data_pane_01';
 import Add_player_pane_01 from './links/Add_player_pane_01';
 
