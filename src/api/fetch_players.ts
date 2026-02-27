@@ -1,12 +1,12 @@
 import type { Player } from "../types/player";
+import { base_url, search_url } from "./api_url";
 
-const base_url = "https://footballers-spring-app.onrender.com/api/v1/footballer";
 
 export const fetch_players = async (query: string) => {
     let temp_url = base_url;
 
     if (query.trim()) {
-        temp_url = `${base_url}/q?query=${query}`;
+        temp_url = `${search_url}${query}`;
     }
 
     const res = await fetch(temp_url);

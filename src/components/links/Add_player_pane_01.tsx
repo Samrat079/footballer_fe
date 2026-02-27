@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ReactSlidingPane from 'react-sliding-pane';
 import "react-sliding-pane/dist/react-sliding-pane.css";
 
-const Github_pane_01 = () => {
+const About_pane_01 = () => {
     const [open, setOpen] = useState<boolean>(false);
 
     return (
@@ -19,20 +19,20 @@ const Github_pane_01 = () => {
                     duration-200
                 '
             >
-                Github
+                Add Player
             </button>
             <ReactSlidingPane
-                title="Github"
+                title="Add player"
                 width='36vw'
                 isOpen={open}
                 onRequestClose={() => setOpen(false)}
                 className='bg-gray-50!'
 
             >
-                <p>Github</p>
+                <p>Add player</p>
             </ReactSlidingPane>
         </div>
     )
 }
 
-export default Github_pane_01
+export default About_pane_01

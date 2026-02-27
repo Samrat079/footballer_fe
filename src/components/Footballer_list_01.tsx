@@ -6,6 +6,7 @@ import { fetch_players } from '../api/fetch_players';
 import About_pane_01 from './links/About_pane_01';
 import Github_pane_01 from './links/Github_pane_01';
 import Sample_data_pane_01 from './links/Sample_data_pane_01';
+import Add_player_pane_01 from './links/Add_player_pane_01';
 
 const Footballer_list_01 = () => {
   const [players, setPlayers] = useState<Player[]>([]);
@@ -26,11 +27,11 @@ const Footballer_list_01 = () => {
     <div className="flex h-screen overflow-hidden">
 
       {/* Sidebar */}
-      <aside className="w-64 border-r border-gray-400 shadow-lg p-4 flex flex-col gap-4">
-        <p className="text-2xl font-bold">Footballer db</p>
+      <aside className="w-64 border-r border-gray-400 shadow-lg flex flex-col ">
+        <p className="text-2xl font-bold m-4">Footballer db</p>
 
         {/* Search bar */}
-        <div className="border rounded-md flex items-center overflow-hidden">
+        <div className="border rounded-md flex items-center overflow-hidden m-4">
           <input
             type="search"
             placeholder="lionel ronaldo...."
@@ -47,9 +48,10 @@ const Footballer_list_01 = () => {
         </div>
 
         {/* Links */}
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col'>
+          <Add_player_pane_01 />
           <About_pane_01 />
-          <Github_pane_01 />
+          {/* <Github_pane_01 /> */}
           <Sample_data_pane_01 />
         </div>
 

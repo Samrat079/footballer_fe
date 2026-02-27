@@ -55,29 +55,82 @@ const Player_card_01 = ({ player }: PlayerCard01) => {
                 </p>
             </div>
 
+            {/* Sliding Pane */}
             <ReactSlidingPane
-                title={player.player}
-                width='36vw'
+                title=""
+                width="36vw"
                 isOpen={isOpen}
                 onRequestClose={() => setIsOpen(false)}
-                className=''
+                className="bg-gray-50!"
             >
-                <div className="flex flex-col gap-4">
-                    <p className="text-2xl font-bold">{player.team}</p>
-                    <div className='border border-gray-200 rounded-xl shadow-md overflow-hidden'>
-                        <table className="min-w-full">
-                            <tbody>
-                                {player_stats.map((player) => (
-                                    <tr className="border-b">
-                                        <th className="text-left px-4 py-2 bg-gray-300 font-semibold">
-                                            {player.field}
-                                        </th>
-                                        <td className="px-4 py-2">{player.value}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                <div className="flex flex-col gap-6">
+
+                    {/* Header Section */}
+                    <div className="pb-4 border-b border-gray-200">
+                        <p className="text-2xl font-bold text-gray-900">
+                            {player.player}
+                        </p>
+                        <p className="text-lg text-gray-600">
+                            {player.team}
+                        </p>
+                        <p className="text-sm text-gray-500">
+                            {player.nation} • {player.pos} • Age {player.age}
+                        </p>
                     </div>
+
+                    {/* Highlight Stats */}
+                    <div className="grid grid-cols-2 gap-4">
+                        <div className="p-4 bg-white rounded-xl shadow-sm text-center">
+                            <p className="text-3xl font-bold text-gray-900">
+                                {player.gls}
+                            </p>
+                            <p className="text-xs text-gray-500 uppercase tracking-wide">
+                                Goals
+                            </p>
+                        </div>
+
+                        <div className="p-4 bg-white rounded-xl shadow-sm text-center">
+                            <p className="text-3xl font-bold text-gray-900">
+                                {player.ast}
+                            </p>
+                            <p className="text-xs text-gray-500 uppercase tracking-wide">
+                                Assists
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Detailed Stats */}
+                    <div className="
+                        flex flex-col
+                        divide-y divide-gray-200
+                        border border-gray-200
+                        rounded-xl
+                        overflow-hidden
+                        bg-white
+                        shadow-sm
+                    ">
+                        {player_stats.map((stat) => (
+                            <div
+                                key={stat.field}
+                                className="
+                                    flex
+                                    justify-between
+                                    px-4
+                                    py-3
+                                    hover:bg-gray-50
+                                    transition-colors
+                                "
+                            >
+                                <span className="text-sm text-gray-600 font-medium">
+                                    {stat.field}
+                                </span>
+                                <span className="text-sm font-semibold text-gray-900">
+                                    {stat.value}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+
                 </div>
             </ReactSlidingPane>
         </div>
