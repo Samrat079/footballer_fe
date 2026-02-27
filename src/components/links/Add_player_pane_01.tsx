@@ -7,6 +7,8 @@ import { fetch_teams_01 } from '../../api/fetch_teams_01'
 import { fetch_nations_01 } from '../../api/fetch_nations_01'
 import { fetch_pos_01 } from '../../api/fetch_pos_01'
 import type { Player } from '../../types/player'
+import { base_url } from '../../api/api_url'
+import { fetch_all_options_01 } from '../../api/fetch_all_options_01'
 
 const initialState = {
     id: '',
@@ -33,20 +35,14 @@ const About_pane_01 = () => {
 
     const [formData, setFormData] = useState<Player>(initialState)
 
-    const { data: team_options = [] } = useQuery<string[]>({
-        queryKey: ["team_options"],
-        queryFn: fetch_teams_01,
+    const { data : all_options} = useQuery({
+        queryKey: ["all_options"],
+        queryFn: fetch_all_options_01
     })
 
-    const { data: nation_options = [] } = useQuery<string[]>({
-        queryKey: ["nation_options"],
-        queryFn: fetch_nations_01,
-    })
-
-    const { data: pos_options = [] } = useQuery<string[]>({
-        queryKey: ["pos_options"],
-        queryFn: fetch_pos_01,
-    })
+    const team_options = all_options?.team ?? [];
+    const nation_options = all_options?.nation ?? [];
+    const pos_options = all_options?.position ?? [];
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
         const { name, value } = e.target
