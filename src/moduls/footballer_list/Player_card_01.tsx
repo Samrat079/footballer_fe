@@ -24,14 +24,10 @@ const Player_card_01 = ({ player }: { player: Player }) => {
         { field: "Red Cards", value: player.crdR },
     ]
 
-    // const delete_handler = () => {
-    //     delete_player_01(player.id);
-    //     setIsOpen(false);
-    // }
 
     const query_client = useQueryClient();
     const delete_mutation = useMutation({
-        mutationFn: () => delete_player_01(player.id),
+        mutationFn: () => delete_player_01(player.id!),
         onSuccess: () => {
             query_client.invalidateQueries({queryKey: ["players"]})
             setIsOpen(false)
