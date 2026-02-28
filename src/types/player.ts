@@ -1,6 +1,6 @@
 export interface Player {
     // strings
-    id: string
+    id: string | null
     player: string
     nation: string
     pos: string

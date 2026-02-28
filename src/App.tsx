@@ -1,4 +1,5 @@
-import Footballer_list_01 from "./components/Footballer_list_01"
+import Footballer_list_01 from "./moduls/footballer_list/Footballer_list_01"
+
 const App = () => {
   return (
     <div>

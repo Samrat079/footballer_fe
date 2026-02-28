@@ -1,13 +1,12 @@
 import { useState } from 'react'
-import type { Player } from '../types/player'
 import ReactSlidingPane from 'react-sliding-pane'
 import "react-sliding-pane/dist/react-sliding-pane.css";
+import type { Player } from '../../types/player';
+import { delete_player_01 } from './delete_player_01';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-type PlayerCard01 = {
-    player: Player
-}
 
-const Player_card_01 = ({ player }: PlayerCard01) => {
+const Player_card_01 = ({ player }: { player: Player }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const player_stats = [
@@ -24,6 +23,20 @@ const Player_card_01 = ({ player }: PlayerCard01) => {
         { field: "Yellow Cards", value: player.crdY },
         { field: "Red Cards", value: player.crdR },
     ]
+
+    // const delete_handler = () => {
+    //     delete_player_01(player.id);
+    //     setIsOpen(false);
+    // }
+
+    const query_client = useQueryClient();
+    const delete_mutation = useMutation({
+        mutationFn: () => delete_player_01(player.id),
+        onSuccess: () => {
+            query_client.invalidateQueries({queryKey: ["players"]})
+            setIsOpen(false)
+        }
+    })
 
     return (
         <div>
@@ -130,6 +143,24 @@ const Player_card_01 = ({ player }: PlayerCard01) => {
                             </div>
                         ))}
                     </div>
+                    <button
+                        className="
+                                w-full
+                                p-4
+                                border border-gray-200
+                                rounded-xl
+                                shadow-sm
+                                hover:bg-red-500
+                                hover:text-white
+                                hover:shadow-lg
+                                hover:-translate-y-1
+                                transition-all
+                                duration-200
+                                "
+                        onClick={() => delete_mutation.mutate()}
+                    >
+                        Delete Player
+                    </button>
 
                 </div>
             </ReactSlidingPane>

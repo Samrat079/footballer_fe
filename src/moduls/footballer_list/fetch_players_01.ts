@@ -1,5 +1,5 @@
-import type { Player } from "../types/player";
-import { base_url, search_url } from "./api_url";
+import { base_url, search_url } from "../../api/api_url";
+import type { Player } from "../../types/player";
 
 export const fetch_players_01 = async (query: string): Promise<Player[]> => {
     let temp_url = base_url;
