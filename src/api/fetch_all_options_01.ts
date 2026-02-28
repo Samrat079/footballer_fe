@@ -1,4 +1,4 @@
-import { base_url, positions_url } from "./api_url"
+import { base_url } from "./api_url"
 
 export interface All_options {
     team: string[],
