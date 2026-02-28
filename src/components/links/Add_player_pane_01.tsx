@@ -3,11 +3,7 @@ import { useState } from 'react'
 import ReactSlidingPane from 'react-sliding-pane'
 import "react-sliding-pane/dist/react-sliding-pane.css"
 
-import { fetch_teams_01 } from '../../api/fetch_teams_01'
-import { fetch_nations_01 } from '../../api/fetch_nations_01'
-import { fetch_pos_01 } from '../../api/fetch_pos_01'
 import type { Player } from '../../types/player'
-import { base_url } from '../../api/api_url'
 import { fetch_all_options_01 } from '../../api/fetch_all_options_01'
 
 const initialState = {
