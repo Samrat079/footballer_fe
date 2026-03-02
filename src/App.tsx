@@ -1,9 +1,10 @@
-import Footballer_list_01 from "./moduls/footballer_list/Footballer_list_01"
+import { Outlet } from "react-router-dom"
 
 const App = () => {
   return (
     <div>
-      <Footballer_list_01 />
+      {/* <Footballer_list_01 /> */}
+      <Outlet />
     </div>
   )
 }

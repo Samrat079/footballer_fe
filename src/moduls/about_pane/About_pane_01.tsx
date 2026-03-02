@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import ReactSlidingPane from 'react-sliding-pane';
 import "react-sliding-pane/dist/react-sliding-pane.css";
 
@@ -57,27 +58,11 @@ const About_pane_01 = () => {
                             integrates with a database using JPA/Hibernate.
                         </p>
                         <br />
-                        <a
-                            href="https://github.com/Samrat079/footballers_spring_app"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="
-                                    inline-block
-                                    p-4
-                                    border border-gray-200
-                                    rounded-xl
-                                    shadow-sm
-                                    hover:bg-gray-500
-                                    hover:text-white
-                                    hover:shadow-lg
-                                    hover:-translate-y-1
-                                    transition-all
-                                    duration-200
-                                "
-                        >
-                            View Backend Repository
-                        </a>
-
+                        <button className="px-6 py-3  bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+                            <Link to={"https://github.com/Samrat079/footballers_spring_app"}>
+                                View Backend Repository
+                            </Link>
+                        </button>
                     </div>
                     <hr />
 
@@ -89,27 +74,11 @@ const About_pane_01 = () => {
                             footballer records and provides a clean, user-friendly interface.
                         </p>
                         <br />
-                        <a
-                            href="https://github.com/Samrat079/footballer_fe"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="
-                                    inline-block
-                                    p-4
-                                    border border-gray-200
-                                    rounded-xl
-                                    shadow-sm
-                                    hover:bg-gray-500
-                                    hover:text-white
-                                    hover:shadow-lg
-                                    hover:-translate-y-1
-                                    transition-all
-                                    duration-200
-                                "
-                        >
-                            View Frontend Repository
-                        </a>
-
+                        <button className="px-6 py-3  bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+                            <Link to={"https://github.com/Samrat079/footballer_fe"} className='px-6 py-3  bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200'>
+                                View Frontend Repository
+                            </Link>
+                        </button>
                     </div>
                     <hr />
 

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ReactSlidingPane from 'react-sliding-pane'
 import "react-sliding-pane/dist/react-sliding-pane.css";
 import type { Player } from '../../types/player';
-import { delete_player_01 } from './delete_player_01';
+import { delete_player_01 } from './API/delete_player_01';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ReactSlidingPane from 'react-sliding-pane';
 import "react-sliding-pane/dist/react-sliding-pane.css";
 import { download_dataset_url } from '../../api/api_url';
+import { Link } from 'react-router-dom';
 
 const Sample_data_pane_01 = () => {
     const [open, setOpen] = useState<boolean>(false);
@@ -122,26 +123,11 @@ const Sample_data_pane_01 = () => {
                         This format allows efficient querying, filtering, and frontend rendering.
                     </p>
 
-                    <a
-                        href={download_dataset_url}
-                        download={true}
-                        className="
-                                    inline-block
-                                    p-4
-                                    border border-gray-200
-                                    rounded-xl
-                                    shadow-sm
-                                    hover:bg-gray-500
-                                    hover:text-white
-                                    hover:shadow-lg
-                                    hover:-translate-y-1
-                                    transition-all
-                                    duration-200
-                                "
-                    >
-
-                        Download Sample Data
-                    </a>
+                    <button className="px-6 py-3  bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+                        <Link to={download_dataset_url} download={true}>
+                            Download Sample Data
+                        </Link>
+                    </button>
 
                 </div>
             </ReactSlidingPane>

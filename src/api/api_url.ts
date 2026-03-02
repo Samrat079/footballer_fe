@@ -6,7 +6,10 @@ export const search_url = base_url + "/q?query=";
 export const teams_url = base_url + "/all_teams";
 export const nations_url = base_url + "/all_nations";
 export const positions_url = base_url + "/all_pos";
-export const all_options_url = base_url + "/all_pos";
+export const all_options_url = base_url + "/all_options";
+
+// Fifa nation logo url
+export const nation_logo_url = "https://api.fifa.com/api/v3/picture/flags-sq-4/" // + the country code
 
 // File download
 export const download_dataset_url = "https://footballers-spring-app.onrender.com/footballer_dataset.csv";

@@ -163,20 +163,7 @@ const Add_player_pane_01 = () => {
                         <button
                             disabled={post_mutation.isPending}
                             type="submit"
-                            className="
-                                    w-full
-                                    inline-block
-                                    p-4
-                                    border border-gray-200
-                                    rounded-xl
-                                    shadow-sm
-                                    hover:bg-gray-500
-                                    hover:text-white
-                                    hover:shadow-lg
-                                    hover:-translate-y-1
-                                    transition-all
-                                    duration-200
-                                    "
+                            className="px-6 py-3 w-full bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
                         >
                             Add Player
                         </button>
