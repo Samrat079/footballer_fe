@@ -12,10 +12,12 @@ import Sample_data_pane_01 from '../sample_data/Sample_data_pane_01';
 import About_pane_01 from '../about_pane/About_pane_01';
 import Add_player_pane_01 from '../add_player/Add_player_pane_01';
 import { useSearchParams } from 'react-router-dom';
+import { useDebouncer } from './Hooks/useDebouncer';
 
 const Footballer_list_01 = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const search_q = searchParams.get("query") || ("");
+  const searchQuery = searchParams.get("query");
+  const search_q = useDebouncer(searchQuery) || (""); 
 
   const handle_change = (e: ChangeEvent<HTMLFormElement>) => {
     const term = e.target.value;
