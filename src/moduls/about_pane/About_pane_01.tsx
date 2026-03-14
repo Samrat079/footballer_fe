@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom';
+import {useState} from 'react'
+import {Link} from 'react-router-dom';
 import ReactSlidingPane from 'react-sliding-pane';
 import "react-sliding-pane/dist/react-sliding-pane.css";
 
@@ -15,7 +15,7 @@ const About_pane_01 = () => {
                     py-2
                     text-left
                     w-full
-                    hover:bg-gray-400
+                    hover:bg-indigo-400
                     hover:text-white
                     transition-all
                     duration-200
@@ -47,7 +47,7 @@ const About_pane_01 = () => {
                             and full CRUD functionality within a modern responsive UI.
                         </p>
                     </div>
-                    <hr />
+                    <hr/>
 
                     <div>
                         <p className="text-lg font-bold ">Backend</p>
@@ -57,14 +57,15 @@ const About_pane_01 = () => {
                             It exposes REST APIs, handles business logic, and
                             integrates with a database using JPA/Hibernate.
                         </p>
-                        <br />
-                        <button className="px-6 py-3  bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+                        <br/>
+                        <button
+                            className="px-6 py-3  bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
                             <Link to={"https://github.com/Samrat079/footballers_spring_app"}>
                                 View Backend Repository
                             </Link>
                         </button>
                     </div>
-                    <hr />
+                    <hr/>
 
                     <div>
                         <p className="text-lg font-bold ">Frontend</p>
@@ -73,14 +74,16 @@ const About_pane_01 = () => {
                             and hooks. The frontend consumes backend APIs to manage
                             footballer records and provides a clean, user-friendly interface.
                         </p>
-                        <br />
-                        <button className="px-6 py-3  bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
-                            <Link to={"https://github.com/Samrat079/footballer_fe"} className='px-6 py-3  bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200'>
+                        <br/>
+                        <button
+                            className="px-6 py-3  bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+                            <Link to={"https://github.com/Samrat079/footballer_fe"}
+                                  className='px-6 py-3  bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200'>
                                 View Frontend Repository
                             </Link>
                         </button>
                     </div>
-                    <hr />
+                    <hr/>
 
 
                     <div>
@@ -93,7 +96,7 @@ const About_pane_01 = () => {
                             <li>Component-based UI architecture</li>
                         </ul>
                     </div>
-                    <hr />
+                    <hr/>
 
 
                     <div>
@@ -104,7 +107,7 @@ const About_pane_01 = () => {
                             practices using modern Java and JavaScript technologies.
                         </p>
                     </div>
-                    <hr />
+                    <hr/>
 
 
                 </div>

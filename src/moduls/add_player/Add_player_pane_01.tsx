@@ -59,7 +59,7 @@ const Add_player_pane_01 = () => {
                 onClick={() => setOpen(true)}
                 className="
                             px-4 py-2 text-left w-full
-                            hover:bg-gray-400 hover:text-white
+                            hover:bg-indigo-400 hover:text-white
                             transition-all duration-200
                         "
             >

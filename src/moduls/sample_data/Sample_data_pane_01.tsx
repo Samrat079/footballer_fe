@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import {useState} from 'react'
 import ReactSlidingPane from 'react-sliding-pane';
 import "react-sliding-pane/dist/react-sliding-pane.css";
-import { download_dataset_url } from '../../api/api_url';
-import { Link } from 'react-router-dom';
+import {download_dataset_url} from '../../api/api_url';
+import {Link} from 'react-router-dom';
 
 const Sample_data_pane_01 = () => {
     const [open, setOpen] = useState<boolean>(false);
@@ -32,7 +32,7 @@ const Sample_data_pane_01 = () => {
                     py-2
                     text-left
                     w-full
-                    hover:bg-gray-400
+                    hover:bg-indigo-400
                     hover:text-white
                     transition-all
                     duration-200
@@ -53,7 +53,7 @@ const Sample_data_pane_01 = () => {
                         Backend, API & Data Structure
                     </p>
 
-                    <hr />
+                    <hr/>
 
                     <p>
                         The backend of this project is built using
@@ -62,7 +62,7 @@ const Sample_data_pane_01 = () => {
                         full CRUD operations on football player data.
                     </p>
 
-                    <hr />
+                    <hr/>
 
                     <p>
                         The player dataset was sourced and adapted from the open-source
@@ -79,42 +79,42 @@ const Sample_data_pane_01 = () => {
                         for persistent storage and API exposure.
                     </p>
 
-                    <hr />
+                    <hr/>
 
                     <p className="text-lg font-semibold text-gray-900">
                         Available API Endpoints
                     </p>
 
-                    <hr />
+                    <hr/>
 
                     <div className="space-y-2 font-mono text-xs bg-gray-50 p-3 rounded">
-                        <p>GET    /footballers</p>
-                        <p>GET    /footballers/{'{id}'}</p>
-                        <p>POST   /footballers</p>
-                        <p>PUT    /footballers/{'{id}'}</p>
+                        <p>GET /footballers</p>
+                        <p>GET /footballers/{'{id}'}</p>
+                        <p>POST /footballers</p>
+                        <p>PUT /footballers/{'{id}'}</p>
                         <p>DELETE /footballers/{'{id}'}</p>
                     </div>
 
-                    <hr />
+                    <hr/>
 
                     <p className="text-lg font-semibold text-gray-900">
                         Footballer Data Structure
                     </p>
 
-                    <hr />
+                    <hr/>
 
                     <p>
                         Each footballer entity in the system follows a structured JSON format.
                         Below is an example record:
                     </p>
 
-                    <hr />
+                    <hr/>
 
                     <pre className="bg-gray-900 text-green-400 font-mono text-xs p-4 rounded overflow-x-auto">
                         {JSON.stringify(exampleFootballer, null, 2)}
                     </pre>
 
-                    <hr />
+                    <hr/>
 
                     <p>
                         The structure includes performance metrics (goals, assists, cards),
@@ -123,11 +123,12 @@ const Sample_data_pane_01 = () => {
                         This format allows efficient querying, filtering, and frontend rendering.
                     </p>
 
-                    <button className="px-6 py-3  bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
-                        <Link to={download_dataset_url} download={true}>
+                    <Link to={download_dataset_url} download={true}>
+                        <button
+                            className="px-6 py-3 bg-gray-900 text-white rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
                             Download Sample Data
-                        </Link>
-                    </button>
+                        </button>
+                    </Link>
 
                 </div>
             </ReactSlidingPane>

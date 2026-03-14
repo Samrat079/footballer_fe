@@ -1,7 +1,6 @@
 
 // Data fetching
 export const base_url = "https://footballers-spring-app.onrender.com/api/v1/footballer";
-export const search_url = base_url + "/q?query=";
 
 export const teams_url = base_url + "/all_teams";
 export const nations_url = base_url + "/all_nations";

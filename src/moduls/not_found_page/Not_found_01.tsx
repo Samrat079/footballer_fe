@@ -9,7 +9,7 @@ const Not_found_01 = () => {
         <p className='text-4xl font-bold'>404</p>
         <p className='text-2xl font-semibold'>Page Not Found</p>
         <p>Sorry, we couldn’t find the page you’re looking for.</p>
-        <Link to="/footballer_fe" className='p-4 border border-gray-200 rounded-xl shadow-sm hover:bg-indigo-400 hover:text-white hover:shadow-lg hover:-translate-y-1 transition-all duration-200'>
+        <Link to="/list" className='inline-block p-4 border border-gray-200 rounded-xl shadow-sm hover:bg-indigo-400 hover:text-white hover:shadow-lg hover:-translate-y-1 transition-all duration-200'>
           GO Back to Home
         </Link>
       </div>
